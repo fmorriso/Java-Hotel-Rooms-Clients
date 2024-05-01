@@ -1,3 +1,6 @@
+import java.time.Duration;
+import java.time.LocalDate;
+
 public class Dates
 {
     private int day;
@@ -9,6 +12,15 @@ public class Dates
         this.day = day;
         this.month = month;
         this.year = year;
+    }
+
+    public static int StayDays(Dates x, Dates y)
+    {
+        // calculate the number of nights between the two dates and return it to caller.
+        LocalDate d1 = LocalDate.of(x.getYear(), x.getMonth(), x.getDay());
+        LocalDate d2 = LocalDate.of(y.getYear(), y.getMonth(), y.getDay());
+        Duration diff = Duration.between(d1, d2);
+        return (int) diff.toDays();
     }
 
     public int getDay()

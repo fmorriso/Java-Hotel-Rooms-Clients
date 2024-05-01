@@ -1,5 +1,5 @@
-import java.time.Duration;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Dates
 {
@@ -18,9 +18,11 @@ public class Dates
     {
         // calculate the number of nights between the two dates and return it to caller.
         LocalDate d1 = LocalDate.of(x.getYear(), x.getMonth(), x.getDay());
+        // System.out.format("d1 = %s%n", d1);
         LocalDate d2 = LocalDate.of(y.getYear(), y.getMonth(), y.getDay());
-        Duration diff = Duration.between(d1, d2);
-        return (int) diff.toDays();
+        // System.out.format("d2 = %s%n", d2);
+        long diff = ChronoUnit.DAYS.between(d1, d2);
+        return (int) diff;
     }
 
     public int getDay()

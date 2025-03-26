@@ -20,6 +20,10 @@ public class HotelReservationSystem
         return true;
     }
 
+    public void listAvailableRooms(LocalDate date) {
+        // Logic to filter and display available rooms
+    }
+
     /** get the java version that is running the current program
      * @return string containing the java version running the current program
      */

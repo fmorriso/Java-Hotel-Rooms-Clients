@@ -13,6 +13,17 @@ class Room {
         this.isAvailable = true;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Room{");
+        sb.append("roomNumber=").append(roomNumber);
+        sb.append(", roomType='").append(roomType).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", isAvailable=").append(isAvailable);
+        sb.append('}');
+        return sb.toString();
+    }
+
     public boolean checkAvailability() {return isAvailable;}
 
     public int getRoomNumber() {return roomNumber;}
